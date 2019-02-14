@@ -1,0 +1,6 @@
+source("RNA_seq.R")
+file_importeR("./DESeq2_input","./DESeq2/colData_m.csv")
+condition_list=list(c("nodul","control"),c("tumor","control"),c("tumor","control"))
+multiple_deseq2_analyseR(countData,colData,condition_list,cook=T)
+ensembleR(res_temp)
+exporteR(full_list,0.05,"tumors_final")
